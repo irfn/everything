@@ -1,0 +1,107 @@
+Bourne Again Shell
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension bash
+    script_exe bash
+    3rd_gen_scale 3.81
+    end_of_line_continuation \\$
+Bourne Shell
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension sh
+    script_exe sh
+    3rd_gen_scale 3.81
+    end_of_line_continuation \\$
+C
+    filter remove_matches ^\s*//
+    filter call_regexp_common C
+    filter remove_inline //.*$
+    extension c
+    extension ec
+    extension pgc
+    3rd_gen_scale 0.77
+    end_of_line_continuation \\$
+C Shell
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension csh
+    extension tcsh
+    script_exe csh
+    script_exe tcsh
+    3rd_gen_scale 3.81
+    end_of_line_continuation \\$
+C++
+    filter remove_matches ^\s*//
+    filter remove_inline //.*$
+    filter call_regexp_common C
+    extension C
+    extension cc
+    extension cpp
+    extension cxx
+    extension pcc
+    3rd_gen_scale 1.51
+    end_of_line_continuation \\$
+C/C++ Header
+    filter remove_matches ^\s*//
+    filter call_regexp_common C
+    filter remove_inline //.*$
+    extension H
+    extension h
+    extension hh
+    extension hpp
+    3rd_gen_scale 1.00
+    end_of_line_continuation \\$
+CSS
+    filter call_regexp_common C
+    extension css
+    3rd_gen_scale 1.00
+HTML
+    filter remove_html_comments
+    filter call_regexp_common HTML
+    extension htm
+    extension html
+    3rd_gen_scale 1.90
+JavaScript
+    filter remove_matches ^\s*//
+    filter call_regexp_common C
+    filter remove_inline //.*$
+    extension js
+    3rd_gen_scale 1.48
+    end_of_line_continuation \\$
+Objective C
+    filter remove_matches ^\s*//
+    filter call_regexp_common C
+    filter remove_inline //.*$
+    3rd_gen_scale 2.96
+    end_of_line_continuation \\$
+Objective C++
+    filter remove_matches ^\s*//
+    filter call_regexp_common C
+    filter remove_inline //.*$
+    extension mm
+    3rd_gen_scale 2.96
+    end_of_line_continuation \\$
+Ruby
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension rb
+    script_exe ruby
+    3rd_gen_scale 4.20
+    end_of_line_continuation \\$
+XML
+    filter remove_html_comments
+    filter call_regexp_common HTML
+    extension XML
+    extension xml
+    3rd_gen_scale 1.90
+YAML
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension yaml
+    extension yml
+    3rd_gen_scale 0.90
+Slim
+    filter remove_matches ^\s*/
+    end_of_line_continuation \\$
+    extension slim
+    3rd_gen_scale 5.00
