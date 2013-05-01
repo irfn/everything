@@ -5,7 +5,6 @@ task :latest_code do
   puts "pulling latest 'everything'...".green
   `git pull --rebase`
   %w{
-    utf8_check
     git:clone
     git:rebase
   }.each {|t| Rake::Task[t].invoke }
@@ -18,12 +17,13 @@ task :morning do
   require 'git'
   include Everything::Project
   current_folder = '.'
+
   ([current_folder] + modules).each do |mod|
-    print "Updating #{mod}… "
+    puts "Updating #{mod}… "
 
     begin
       git = Git.open(mod)
-      git_pull_response = git.pull(nil, nil, '--rebase')
+      git_pull_response = git.pull('origin', 'master', '--rebase')
 
       if git_pull_response =~ Regexp.new(GIT_ALREADY_UP_TO_DATE_MESSAGES.join('|'))
         puts '√'.green
