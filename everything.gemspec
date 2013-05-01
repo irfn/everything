@@ -6,7 +6,7 @@ require 'everything/version'
 Gem::Specification.new do |spec|
   spec.name          = "everything"
   spec.version       = Everything::VERSION
-  spec.authors       = ["Irfan Shah et all"]
+  spec.authors       = ["Irfan Shah"]
   spec.email         = ["mail.urfi@gmail.com"]
   spec.description   = %q{wrap multiple git projects into one project}
   spec.summary       = %q{wrap multiple git projects into one project}
