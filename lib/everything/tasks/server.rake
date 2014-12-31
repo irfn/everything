@@ -13,8 +13,12 @@ namespace :run do
   end
 
   task :all do
+    threads = []
     project_apps.each_key do |app|
-      Rake::Task["run:#{app}"].invoke
+      threads << Thread.new { Rake::Task["run:#{app}"].invoke }
+    end
+    threads.each do |thread|
+      thread.join
     end
   end
 
@@ -34,8 +38,12 @@ namespace :stop do
   end
 
   task :all do
+    threads = []
     project_apps.each_key do |app|
-      Rake::Task["stop:#{app}"].invoke
+      threads << Thread.new { Rake::Task["stop:#{app}"].invoke }
+    end
+    threads.each do |thread|
+      thread.join
     end
   end
 end
@@ -52,8 +60,13 @@ namespace :restart do
   end
 
   task :all do
+    threads = []
     project_apps.each_key do |app|
-      Rake::Task["restart:#{app}"].invoke
+      threads << Thread.new { Rake::Task["restart:#{app}"].invoke }
+    end
+
+    threads.each do |thread|
+      thread.join
     end
   end
 end

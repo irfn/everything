@@ -15,7 +15,7 @@ class RackupServer
       Bundler.with_clean_env do
         system_with_prefix @app, [
           "cd #{@app}",
-          "rackup -D -P #{pid_file} -p #{@port}",
+          "bundle exec rackup -D -P #{pid_file} -p #{@port}",
         ].join(' && ')
 
         sleep 3
